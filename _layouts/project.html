@@ -1,0 +1,63 @@
+---
+layout: academic
+---
+{% comment %}Detail page for one project (projects/<folder>/index.md). Front matter fields: see projects/_template/index.md.{% endcomment %}
+<div class="project-meta">
+  <p class="project-dates">{% include project-dates.html project=page %}</p>
+  <ul class="project-categories" aria-label="Categories">{% for c in page.categories %}{% assign cat = site.data.project_categories | where: 'id', c | first %}<li>{{ cat.label | default: c }}</li>{% endfor %}</ul>
+  {% include project-links.html project=page %}
+</div>
+<div class="project-body">
+{{ content }}
+</div>
+{% assign has_cite = false %}{% if page.cite and page.cite != "" %}{% assign has_cite = true %}{% endif %}{% if page.cite_external %}{% assign has_cite = true %}{% endif %}
+{% if has_cite %}
+<section class="project-citation" aria-labelledby="citation">
+  <h2 id="citation">Citation</h2>
+  <p>{{ page.cite_intro | default: "If you use this project in your research, please cite:" }}</p>
+  {% if page.cite and page.cite != "" %}{% assign cite_ids = page.cite %}{% if cite_ids.first == nil %}{% assign cite_ids = page.cite | split: ',' %}{% endif %}{% for cid in cite_ids %}{% assign cid = cid | strip %}{% assign paper = site.data.publications.papers | where: 'id', cid | first %}{% if paper %}
+  <div class="citation-entry">
+    <p class="citation-text">{% include publication-citation.html paper=paper %}</p>
+    {% if paper.bibtex %}{% include bibtex-box.html bibtex=paper.bibtex %}{% endif %}
+  </div>{% endif %}{% endfor %}{% endif %}
+  {% for ext in page.cite_external %}
+  <div class="citation-entry">
+    <p class="citation-text">{{ ext.text }}</p>
+    {% if ext.bibtex %}{% include bibtex-box.html bibtex=ext.bibtex %}{% endif %}
+  </div>{% endfor %}
+</section>
+{% include copy-button-script.html %}
+{% endif %}
+<script>
+// Figure tabs: <div class="figure-tabs"> with buttons [data-tab] and panels [data-panel].
+document.querySelectorAll('.figure-tabs').forEach(function (box) {
+  var buttons = box.querySelectorAll('[data-tab]'), panels = box.querySelectorAll('[data-panel]');
+  function show(id) {
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-tab') === id); });
+    panels.forEach(function (p) { p.hidden = p.getAttribute('data-panel') !== id; });
+  }
+  buttons.forEach(function (b) { b.addEventListener('click', function () { show(b.getAttribute('data-tab')); }); });
+  box.querySelector('.figure-tabs-bar').hidden = false;
+  show(buttons[0].getAttribute('data-tab'));
+});
+</script>
+<dialog class="lightbox" aria-label="Enlarged figure"><button type="button" class="lightbox-close" aria-label="Close">×</button><img alt=""><p class="lightbox-caption"></p></dialog>
+<script>
+// Click any figure image to view it enlarged.
+(function () {
+  var box = document.querySelector('.lightbox'), img = box.querySelector('img'), cap = box.querySelector('.lightbox-caption');
+  document.querySelectorAll('.project-body figure img').forEach(function (el) {
+    el.classList.add('zoomable'); el.tabIndex = 0; el.setAttribute('role', 'button');
+    el.setAttribute('aria-label', 'Enlarge: ' + (el.alt || 'figure'));
+    function open() {
+      img.src = el.currentSrc || el.src; img.alt = el.alt;
+      var fc = el.closest('figure').querySelector('figcaption'); cap.textContent = fc ? fc.textContent : '';
+      box.showModal();
+    }
+    el.addEventListener('click', open);
+    el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+  });
+  box.addEventListener('click', function (e) { if (e.target === box || e.target.classList.contains('lightbox-close')) box.close(); });
+})();
+</script>
+<p class="project-back"><a href="{{ '/projects/' | relative_url }}">← All projects</a></p>

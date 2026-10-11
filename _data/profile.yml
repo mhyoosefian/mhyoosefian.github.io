@@ -1,0 +1,28 @@
+# Contact and profile links shown in the sidebar on every page, in this order.
+# icon must be one of: location, institution, email, scholar, orcid, github, linkedin, youtube
+# (defined in _includes/academic-icon.html). Leave url out for plain text (no link).
+# To hide an item, delete it or put # at the start of each of its lines.
+links:
+  - label: "Northeastern University"
+    icon: institution
+    url: "https://www.northeastern.edu"
+  - label: "Boston, MA"
+    icon: location
+  - label: "Email"
+    icon: email
+    url: "mailto:yoosefiannooshabad.m@northeastern.edu"
+  - label: "Google Scholar"
+    icon: scholar
+    url: "https://scholar.google.com/citations?user=iWzUEVkAAAAJ&hl=en"
+  - label: "ORCID"
+    icon: orcid
+    url: "https://orcid.org/0000-0003-0810-4528"
+  - label: "GitHub"
+    icon: github
+    url: "https://github.com/mhyoosefian"
+  - label: "LinkedIn"
+    icon: linkedin
+    url: "https://www.linkedin.com/in/mhyoosefian/"
+  - label: "YouTube"
+    icon: youtube
+    url: "https://www.youtube.com/@mohammadhusseinyoosefian"

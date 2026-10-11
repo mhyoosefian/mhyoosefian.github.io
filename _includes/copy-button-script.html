@@ -1,0 +1,14 @@
+{% comment %}Copy buttons for BibTeX boxes (.copy-button next to a <code> block). Used by Publications and project pages.{% endcomment %}
+<script>
+(function () {
+  document.querySelectorAll('.copy-button').forEach(function (b) {
+    var status = b.querySelector('.copy-status');
+    b.addEventListener('click', function () {
+      var text = b.parentNode.querySelector('code').textContent;
+      var done = function (msg) { status.textContent = msg; b.classList.add('is-copied'); setTimeout(function () { status.textContent = ''; b.classList.remove('is-copied'); }, 1600); };
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(function () { done('Copied'); }, function () { done('Press ⌘C'); });
+      else done('Press ⌘C');
+    });
+  });
+})();
+</script>

@@ -1,0 +1,6 @@
+{% comment %}YouTube video. Usage: include project-video.html id="VIDEO_ID" caption="Optional caption"
+The id is the part after "watch?v=" in a YouTube link.{% endcomment %}
+<figure class="project-figure">
+  <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/{{ include.id }}" title="{{ include.caption | default: 'Video' | escape }}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+  {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>

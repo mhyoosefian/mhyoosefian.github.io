@@ -1,0 +1,32 @@
+---
+layout: academic
+---
+{% comment %}A blog post (_posts/YYYY-MM-DD-name.md). Front matter: title, date, summary, math (true for
+equations), and optionally `series` (an id shared by all parts), `series_title` and `part` (1, 2, ...).
+Posts of a series get a table of contents at the top and previous/next buttons at the bottom.{% endcomment %}
+{% if page.series %}{% assign parts = site.posts | where: 'series', page.series | sort: 'part' %}{% endif %}
+<p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %Y" }}</time>{% if page.series %} · {{ page.series_title | escape }}, part {{ page.part }} of {{ parts.size }}{% endif %}</p>
+
+{% if page.series %}
+<nav class="series-toc" aria-label="Parts of this series">
+  <p class="series-toc-title">{{ page.series_title | escape }}</p>
+  <ol>
+    {% for p in parts %}<li>{% if p.url == page.url %}<span aria-current="page">{{ p.title | escape }}</span>{% else %}<a href="{{ p.url | relative_url }}">{{ p.title | escape }}</a>{% endif %}</li>
+    {% endfor %}
+  </ol>
+</nav>
+{% endif %}
+
+<article class="post-body">
+{{ content }}
+</article>
+
+{% if page.series %}
+{% for p in parts %}{% if p.url == page.url %}{% assign i = forloop.index0 %}{% endif %}{% endfor %}
+{% assign prev_i = i | minus: 1 %}{% assign next_i = i | plus: 1 %}
+<nav class="series-nav" aria-label="Previous and next part">
+  {% if i > 0 %}{% assign p = parts[prev_i] %}<a class="series-prev" href="{{ p.url | relative_url }}"><span>← Previous</span>{{ p.title | escape }}</a>{% else %}<span></span>{% endif %}
+  {% if next_i < parts.size %}{% assign p = parts[next_i] %}<a class="series-next" href="{{ p.url | relative_url }}"><span>Next →</span>{{ p.title | escape }}</a>{% endif %}
+</nav>
+{% endif %}
+<p class="post-back"><a href="{{ '/blog/' | relative_url }}">← All posts</a></p>

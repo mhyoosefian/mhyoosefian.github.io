@@ -1,0 +1,68 @@
+# Content of the Research page (_pages/research.md). Text fields use Markdown.
+# - intro: always visible; intro_more: shown when the visitor clicks [more].
+# - directions: one item each. `summary` is always visible; `details` is shown with [more].
+#   `figure` is a diagram in _includes/research/ (file name without .html).
+#   `links` appear at the end of the details: label + url (a site path or a full https link).
+
+intro: |
+  My research lies at the intersection of estimation theory, convex optimization, and robust control, which are essential ingredients in the navigation of autonomous robots. Before a robot can plan or act, it must know where it is, using measurements that are noisy, incomplete and often far from Gaussian. Under such noise the standard Kalman filter can perform poorly, and the many robust estimators proposed as alternatives rarely come with guarantees.
+
+  A central theme of my current work is the design of certifiably stable state estimators (e.g., Kalman-type filters) for systems under non-Gaussian noise. I use tools from robust control and convex optimization to address two questions:
+
+  1. How can we design new estimators that outperform the standard Kalman filter and existing non-Gaussian estimators?
+  2. How can we certify the stability of non-Gaussian estimators, i.e., guarantee that their estimation error remains bounded?
+
+  I am particularly interested in the second question, since stability guarantees for most existing non-Gaussian estimators are limited or rely on restrictive assumptions. Previously, I also worked on vision-based navigation and analytical dynamics. Brief summaries are provided below; click on each item for an expanded description.
+
+intro_more: |
+  Convex optimization is the common thread of this work. Convex analysis underlies the update of my dynamic-programming estimator, and semidefinite programming lets me turn questions about nonlinear systems into semidefinite programs whose solutions are guarantees. I have used the same tools to bound the reachable states of [systems controlled by neural networks](/projects/neural-network-reachability/), to plan motion under [signal temporal logic](/projects/leader-follower-stl/) specifications with mixed-integer programming, and to enforce consistency in [attitude estimation](/projects/attitude-estimation/). More examples are on the [Projects](/projects/) page.
+
+directions:
+  - id: state-estimation
+    title: "State estimation under non-Gaussian noise"
+    figure: estimation
+    summary: |
+      The Kalman filter is optimal when all noise is Gaussian, but real sensors produce outliers, skewed errors and heavy tails. I design estimators that stay accurate under such noise at a computational cost close to that of the Kalman filter, and I prove that their estimation error remains bounded.
+    details: |
+      **Estimation via dynamic programming.** For linear systems with Gaussian process noise and non-Gaussian measurement noise, I developed an approximate maximum a posteriori estimator that replaces the Bayesian update of the Kalman filter with a Bellman-like update, built with tools from convex analysis. It only requires the measurement noise density to be differentiable, achieves a lower error than the Kalman filter, and performs comparably to state-of-the-art estimators at a fraction of their computational cost. [[paper]](/publications/#dynamic-programming-estimation) [[code]](https://github.com/QCGroup/dpkf)
+
+      **Provably stable robust filters.** Correntropy Kalman filters are robust to non-Gaussian measurement noise, but I showed that under non-Gaussian process noise they can perform poorly, and that for unstable systems their error can even diverge. To fix this, I proposed a family of regularized correntropy filters and proved that, for any positive level of regularization, their mean-square estimation error stays bounded. [[paper]](/publications/#regularized-correntropy)
+
+      **Where to measure from.** The quality of an estimate also depends on where the measurements are taken. I studied how to place range sensors so that they localize targets as accurately as possible while revealing as little as possible about themselves to the targets, and derived analytical solutions in two dimensions for any number of sensors localizing two targets. [[paper]](/publications/#stealthy-sensor-placement)
+    links:
+      - label: "Invariant EKF"
+        url: /projects/invariant-ekf/
+      - label: "Attitude Estimation"
+        url: /projects/attitude-estimation/
+
+  - id: vision-based-navigation
+    title: "Vision-based navigation"
+    figure: navigation
+    summary: |
+      Where GPS is unavailable, such as indoors or between tall buildings, robots can navigate by fusing camera images with inertial measurements. We developed a faster visual-inertial odometry algorithm, and I built an experimental camera–IMU setup to test it on real data.
+    details: |
+      The multi-state constraint Kalman filter (MSCKF) is one of the most widely used visual-inertial odometry methods because it is robust, fast and accurate, but processing images remains expensive for small, resource-constrained vehicles. We changed how the filter marginalizes features and prunes past camera states, which made it about six times faster than the standard MSCKF and at least 20% more accurate in final position, on both the EuRoC MAV dataset and our own experiments. To run these experiments, I designed, built and calibrated a camera–IMU setup. [[paper]](/publications/#fast-msckf) [[video]](https://www.youtube.com/watch?v=3mE9v_cA5IU)
+
+      Along the same lines, I developed a monocular visual odometry pipeline that extracts features only at keyframes and runs about 20 times faster than the conventional approach.
+    links:
+      - label: "Visual-Inertial Odometry"
+        url: /projects/visual-inertial-odometry/
+      - label: "Fast Monocular Visual Odometry"
+        url: /projects/monocular-visual-odometry/
+
+  - id: analytical-dynamics
+    title: "Analytical dynamics"
+    figure: dynamics
+    summary: |
+      Simulating, estimating and controlling a mechanical system all start from its equations of motion. We developed an efficient form of Volterra’s equations for multibody systems that gives the minimum number of first-order equations needed to describe their motion.
+    details: |
+      Volterra’s equations describe a multibody system with quasi-velocities and handle both holonomic and nonholonomic constraints. Many systems also have ignorable coordinates, whose generalized momenta are conserved. We treated these conserved momenta as additional "dynamical" constraints, alongside the ordinary kinematic ones, which reduces the equations of motion to the smallest possible set. We demonstrated the method on a constrained planar system, three connected rigid bodies, and a CubeSat that moves a mass with a deployable boom. [[paper]](/publications/#volterra)
+
+      I also compared classical formulations of the equations of motion in accuracy, run time and simplicity: four Lagrangian formulations for a spinning top, and eight methods, from Lagrange multipliers to Kane’s and Gibbs–Appell’s equations, for a wheeled snake robot with nonholonomic constraints.
+    links:
+      - label: "Volterra-Based Equations of Motion"
+        url: /projects/volterra-equations/
+      - label: "Spinning Top"
+        url: /projects/spinning-top/
+      - label: "Snake Robot"
+        url: /projects/snake-robot/

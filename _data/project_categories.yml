@@ -1,0 +1,14 @@
+# Project categories, shown as filter buttons on the Projects page in this order.
+# A project lists category ids under `categories:` in its index.md front matter.
+- id: state-estimation
+  label: "State estimation"
+- id: computer-vision
+  label: "Computer vision"
+- id: multi-agent
+  label: "Multi-agent systems"
+- id: neural-networks
+  label: "Neural networks"
+- id: dynamics
+  label: "Dynamics"
+- id: control
+  label: "Control"

@@ -1,0 +1,34 @@
+<svg viewBox="0 0 240 170" role="img" aria-label="Sketch: a camera and an IMU moving along a path while observing feature points">
+  <!-- feature points -->
+  <g fill="var(--accent)">
+    <circle cx="150" cy="26" r="3.2"/><circle cx="186" cy="40" r="3.2"/><circle cx="214" cy="22" r="3.2"/>
+    <circle cx="204" cy="70" r="3.2"/><circle cx="168" cy="58" r="3.2"/><circle cx="126" cy="44" r="3.2"/>
+  </g>
+  <!-- path of the vehicle -->
+  <path d="M14 150 C50 150 64 120 92 112 C118 105 132 118 156 112" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <!-- earlier pose (faded) -->
+  <g opacity=".45" transform="translate(40 136) rotate(-12)">
+    <rect x="-13" y="-8" width="26" height="16" rx="2" fill="var(--soft)" stroke="var(--ink)" stroke-width="1.2"/>
+    <path d="M13 -5 L22 -10 V10 L13 5 z" fill="var(--soft)" stroke="var(--ink)" stroke-width="1.2"/>
+  </g>
+  <!-- current pose: camera body + lens + IMU -->
+  <g transform="translate(100 108) rotate(-18)">
+    <rect x="-16" y="-10" width="32" height="20" rx="2.5" fill="var(--soft)" stroke="var(--ink)" stroke-width="1.4"/>
+    <path d="M16 -6 L27 -12 V12 L16 6 z" fill="var(--soft)" stroke="var(--ink)" stroke-width="1.4"/>
+    <rect x="-12" y="12" width="14" height="9" rx="1.5" fill="var(--nav-soft)" stroke="var(--accent)" stroke-width="1.2"/>
+    <text x="-5" y="19.5" text-anchor="middle" font-size="6.5" fill="var(--accent)" font-family="system-ui, sans-serif">IMU</text>
+  </g>
+  <!-- rays to features -->
+  <g stroke="var(--accent)" stroke-width="1" opacity=".55">
+    <line x1="126" y1="96" x2="150" y2="26"/><line x1="126" y1="96" x2="186" y2="40"/>
+    <line x1="126" y1="96" x2="168" y2="58"/><line x1="126" y1="96" x2="126" y2="44"/>
+    <line x1="126" y1="96" x2="204" y2="70"/>
+  </g>
+  <!-- body frame -->
+  <g stroke="var(--ink)" stroke-width="1.2" fill="none">
+    <path d="M20 40 H50" /><path d="M20 40 V12" />
+    <path d="M46 37 L50 40 L46 43 M17 16 L20 12 L23 16"/>
+  </g>
+  <text x="54" y="44" font-size="11" font-style="italic" fill="var(--ink)" font-family="Georgia, serif">x</text>
+  <text x="14" y="10" font-size="11" font-style="italic" fill="var(--ink)" font-family="Georgia, serif">y</text>
+</svg>

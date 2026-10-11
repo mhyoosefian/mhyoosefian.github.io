@@ -1,0 +1,32 @@
+# News items, newest first. `date` is shown as written; `text` can use *italics* and [links](url).
+# Optional: `paper` (an id from _data/publications.yml) adds a [paper] link to the Publications page,
+# `slides` (a file in files/slides/) adds a [slides] link, and `video` (a file in files/slides/ or a YouTube link) adds a [video] link.
+- date: "Sep 2026"
+  text: "Submitted *From Divergence to Provable Stability: Regularized Correntropy Kalman Filters* to the 2027 American Control Conference (ACC)."
+  paper: regularized-correntropy
+- date: "Dec 2025"
+  text: "My advisor, Dr. Laurent Lessard, presented our paper *State Estimation for Linear Systems with Non-Gaussian Measurement Noise via Dynamic Programming* at the 2025 IEEE Conference on Decision and Control (CDC) in Rio de Janeiro, Brazil."
+  paper: dynamic-programming-estimation
+  slides: /files/slides/cdc2025.pdf
+- date: "Jul 2025"
+  text: "Our paper *State Estimation for Linear Systems with Non-Gaussian Measurement Noise via Dynamic Programming* was accepted at the 2025 IEEE Conference on Decision and Control (CDC)!"
+  paper: dynamic-programming-estimation
+- date: "Jul 2025"
+  text: "Presented my paper *Stealthy Optimal Range-Sensor Placement for Target Localization* at the 2025 American Control Conference (ACC) in Denver, Colorado."
+  paper: stealthy-sensor-placement
+  slides: /files/slides/acc2025.pdf
+  video: /files/slides/acc2025-video.mp4
+- date: "Dec 2024"
+  text: "My first Ph.D. paper, *Stealthy Optimal Range-Sensor Placement for Target Localization*, was published in IEEE Control Systems Letters (L-CSS)!"
+  paper: stealthy-sensor-placement
+- date: "Aug 2024"
+  text: "Our paper *An Improved Multi-State Constraint Kalman Filter for Visual-Inertial Odometry* was published in the Journal of the Franklin Institute!"
+  paper: fast-msckf
+  video: https://www.youtube.com/watch?v=3mE9v_cA5IU
+- date: "Apr 2024"
+  text: "Our paper *Development of an Efficient Formulation for Volterra’s Equations of Motion for Multibody Dynamical Systems* was accepted in Scientia Iranica!"
+  paper: volterra
+- date: "Nov 2023"
+  text: "Passed my qualifying exam and became a Ph.D. candidate."
+- date: "Sep 2022"
+  text: "Joined Northeastern University as a Ph.D. student in Mechanical Engineering, advised by [Dr. Laurent Lessard](https://scholar.google.com/citations?user=5PBPqeQAAAAJ&hl=en)."

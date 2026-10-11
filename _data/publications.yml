@@ -1,0 +1,296 @@
+# Edit this file to add or update publications. See PUBLICATIONS.md.
+# Papers are grouped by type or by year (the reader chooses), newest year first.
+# Within the same year, papers keep the order they have in this file.
+# Keep year numeric and author names in their published order.
+highlight_author: "M. H. Yoosefian Nooshabadi"
+scholar_url: "https://scholar.google.com/citations?user=iWzUEVkAAAAJ&hl=en"
+
+# Co-author profile links. The name must match the spelling used in `authors` exactly.
+# Authors not listed here are shown as plain text.
+coauthors:
+  "L. Lessard": "https://scholar.google.com/citations?user=5PBPqeQAAAAJ&hl=en"
+  "M. R. Abdollahi": "https://scholar.google.com/citations?user=BlAhr7kAAAAJ&hl=en"
+  "S. H. Pourtakdoust": "https://scholar.google.com/citations?user=-Ma0A1wAAAAJ&hl=en"
+  "H. Nejat Pishkenari": "https://scholar.google.com/citations?user=VEbApmMAAAAJ&hl=en"
+  "P. Amiri": "https://scholar.google.com/citations?user=7Kj-JP0AAAAJ&hl=en"
+  "E. Abbasi": "https://scholar.google.com/citations?user=lAlY414AAAAJ&hl=en"
+  "M. Ghayour": "https://scholar.google.com/citations?user=dCozEZgAAAAJ&hl=en"
+  "M. Danesh": "https://scholar.google.com/citations?user=jAOpFgkAAAAJ&hl=en"
+  "R. Sipahi": "https://scholar.google.com/citations?user=i_YXjPEAAAAJ&hl=en"
+
+sections:
+  - id: journal
+    title: "Journal Papers"
+    label: "Journal"
+  - id: conference
+    title: "Conference Papers"
+    label: "Conference"
+  - id: preprint
+    title: "Preprints"
+    label: "Preprint"
+
+papers:
+  - id: volterra
+    category: journal
+    title: "Development of an Efficient Formulation for Volterra’s Equations of Motion for Multibody Dynamical Systems"
+    authors:
+      - "M. H. Yoosefian Nooshabadi"
+      - "H. Nejat Pishkenari"
+    venue: "Scientia Iranica"
+    year: 2025
+    details: "32(2), e6891"
+    status: "Published"
+    abstract: >-
+      In this paper, we present an efficient form of Volterra’s equations of motion for both
+      unconstrained and constrained multibody dynamical systems that include ignorable coordinates.
+      The proposed method is applicable for systems with both holonomic and nonholonomic constraints.
+      Firstly, based on the definition of ignorable coordinates, one of the motion constants (the
+      generalized momentum vector corresponding to the ignorable coordinates) is considered as a
+      constraint, which will be referred to as dynamical constraints. These constraints, along with
+      ordinary constraints, namely kinematical constraints, are then used in the proposed method to
+      derive motion equations. This approach gives the minimum number of equations needed to study
+      the behavior of a dynamical system. Three simulation examples are provided to evaluate the
+      proposed method and to compare it to existing methods. The first case study is a constrained
+      dynamical system, which moves in two-dimensional space. The second one is an unconstrained
+      multibody system including three connected rigid bodies. Finally, the last case study includes
+      a cubic satellite that uses a deployable boom to move a mass to a desired location. The results
+      of the numerical simulations are compared to the conventional methods and the better
+      performance of the proposed method is demonstrated.
+    bibtex: |
+      @article{nooshabadi2025development,
+        title   = {Development of an Efficient Formulation for {Volterra}'s Equations of Motion for Multibody Dynamical Systems},
+        author  = {{Yoosefian Nooshabadi}, Mohammad Hussein and {Nejat Pishkenari}, Hossein},
+        journal = {Scientia Iranica},
+        volume  = {32},
+        number  = {2},
+        pages   = {e6891},
+        year    = {2025},
+        doi     = {10.24200/sci.2024.60600.6891}
+      }
+    links:
+      - label: "Link"
+        url: "https://scientiairanica.sharif.edu/article_23551.html"
+      - label: "PDF"
+        url: "/files/papers/nooshabadi2025development.pdf"
+
+  - id: fast-msckf
+    category: journal
+    title: "An Improved Multi-State Constraint Kalman Filter for Visual-Inertial Odometry"
+    authors:
+      - "M. R. Abdollahi"
+      - "S. H. Pourtakdoust"
+      - "M. H. Yoosefian Nooshabadi"
+      - "H. Nejat Pishkenari"
+    venue: "Journal of the Franklin Institute"
+    year: 2024
+    details: "361(15), 107130"
+    status: "Published"
+    abstract: >-
+      Fast pose estimation (PE) plays a vital role for agile autonomous robots in successfully
+      carrying out their tasks. While Global Navigation Satellite Systems (GNSS) such as Global
+      Positioning System (GPS) have been traditionally used along with Inertial Navigation Systems
+      (INS) for PE, their viability is compromised in indoor and urban environments due to their low
+      update rates and inadequate signal coverage. Visual-Inertial Odometry (VIO) is gaining
+      popularity as a practical alternative to GNSS/INS systems in GNSS-denied environments. Among
+      various VIO-based methods, the Multi-State Constraint Kalman Filter (MSCKF) has garnered
+      significant attention due to its robustness, speed and accuracy. Nevertheless, high
+      computational cost of image processing is still challenging for real-time implementation on
+      resource-constrained vehicles. In this paper, an enhanced version of the MSCKF is proposed. The
+      proposed approach differs from the original MSCKF in the feature marginalization and state
+      pruning steps of the algorithm. This new design results in a faster algorithm with comparable
+      accuracy. We validate the proposed algorithm using both an open-source dataset and real-world
+      experiments. It is demonstrated that the proposed Fast-MSCKF (referred to as FMSCKF) is
+      approximately six times faster and at least 20% more accurate in final position estimation
+      compared to the standard MSCKF.
+    bibtex: |
+      @article{abdollahi2024improved,
+        title={An improved multi-state constraint Kalman filter for visual-inertial odometry},
+        author={Abdollahi, MR and Pourtakdoust, Seid H and Nooshabadi, MH Yoosefian and Pishkenari, Hossein Nejat},
+        journal={Journal of the Franklin Institute},
+        volume={361},
+        number={15},
+        pages={107130},
+        year={2024},
+        publisher={Elsevier}
+      }
+    links:
+      - label: "Link"
+        url: "https://www.sciencedirect.com/science/article/pii/S0016003224005519"
+      - label: "PDF"
+        url: "/files/papers/abdollahi2024improved.pdf"
+      - label: "arXiv"
+        url: "https://arxiv.org/abs/2210.08117"
+
+  - id: stealthy-sensor-placement
+    category: journal
+    title: "Stealthy Optimal Range-Sensor Placement for Target Localization"
+    authors:
+      - "M. H. Yoosefian Nooshabadi"
+      - "R. Sipahi"
+      - "L. Lessard"
+    venue: "IEEE Control Systems Letters"
+    year: 2024
+    details: "8, pp. 2763–2768"
+    status: "Published"
+    note: "Presented at the 2025 American Control Conference (ACC)."
+    abstract: >-
+      We study a stealthy range-sensor placement problem where a set of range sensors are to be
+      placed with respect to targets to effectively localize them while maintaining a degree of
+      stealthiness from the targets. This is an open and challenging problem since two competing
+      objectives must be balanced: (a) optimally placing the sensors to maximize their ability to
+      localize the targets and (b) minimizing the information the targets gather regarding the
+      sensors. We provide analytical solutions in 2D for the case of any number of sensors that
+      localize two targets.
+    bibtex: |
+      @article{nooshabadi2024stealthy,
+        title={Stealthy Optimal Range-Sensor Placement for Target Localization},
+        author={Nooshabadi, Mohammad Hussein Yoosefian and Sipahi, Rifat and Lessard, Laurent},
+        journal={IEEE Control Systems Letters},
+        volume={8},
+        pages={2763--2768},
+        year={2024},
+        publisher={IEEE}
+      }
+    links:
+      - label: "Link"
+        url: "https://ieeexplore.ieee.org/abstract/document/10786353"
+      - label: "PDF"
+        url: "/files/papers/nooshabadi2024stealthy.pdf"
+
+  - id: regularized-correntropy
+    category: preprint
+    title: "From Divergence to Provable Stability: Regularized Correntropy Kalman Filters"
+    authors:
+      - "M. H. Yoosefian Nooshabadi"
+      - "L. Lessard"
+    venue: "2027 American Control Conference (ACC)"
+    year: 2026
+    status: "Submitted"
+    abstract: >-
+      Correntropy-based Kalman filters (CoKFs) are nonlinear robust state estimators that have been
+      shown to outperform the standard Kalman filter in the presence of non-Gaussian noise. In this
+      paper, we show that under non-Gaussian process noise, a CoKF may perform poorly, and when the
+      dynamical system is unstable, it may even diverge. We prove the error divergence for a scalar
+      system. To overcome this issue, we propose a family of regularized CoKFs, called α-CoKFs, and
+      prove that for any positive regularization level, the proposed estimator has bounded
+      mean-square estimation error. Extensive numerical experiments show the α-CoKFs outperform the
+      standard Kalman filter, while the standard CoKFs either perform poorly or are unstable.
+    # PDF intentionally not posted yet (files/papers/nooshabadi2026divergence.pdf when ready).
+
+  - id: dynamic-programming-estimation
+    category: conference
+    title: "State Estimation for Linear Systems with Non-Gaussian Measurement Noise via Dynamic Programming"
+    authors:
+      - "M. H. Yoosefian Nooshabadi"
+      - "L. Lessard"
+    venue: "IEEE 64th Conference on Decision and Control (CDC)"
+    year: 2025
+    details: "pp. 5612–5617"
+    status: "Published"
+    abstract: >-
+      We propose a new recursive estimator for linear dynamical systems under Gaussian process noise
+      and non-Gaussian measurement noise. Specifically, we develop an approximate maximum a
+      posteriori (MAP) estimator using dynamic programming and tools from convex analysis. Our
+      approach does not rely on restrictive noise assumptions and employs a Bellman-like update
+      instead of a Bayesian update. Our proposed estimator is computationally efficient, with only
+      modest overhead compared to a standard Kalman filter. Simulations demonstrate that our
+      estimator achieves lower root mean squared error (RMSE) than the Kalman filter and has
+      comparable performance to state-of-the-art estimators, while requiring significantly less
+      computational power.
+    bibtex: |
+      @inproceedings{nooshabadi2025state,
+        title={State Estimation for Linear Systems with Non-Gaussian Measurement Noise via Dynamic Programming},
+        author={Nooshabadi, Mohammad Hussein Yoosefian and Lessard, Laurent},
+        booktitle={2025 IEEE 64th Conference on Decision and Control (CDC)},
+        pages={5612--5617},
+        year={2025},
+        organization={IEEE}
+      }
+    links:
+      - label: "Link"
+        url: "https://ieeexplore.ieee.org/abstract/document/11312865"
+      - label: "PDF"
+        url: "/files/papers/nooshabadi2025state.pdf"
+      - label: "arXiv"
+        url: "https://arxiv.org/abs/2509.05482"
+      - label: "Code"
+        url: "https://github.com/QCGroup/dpkf"
+
+  - id: formation-flight
+    category: conference
+    title: "Formation Flight Control and Path Tracking of a Multi-Quadrotor System in the Presence of Measurement Noise and Disturbances"
+    authors:
+      - "E. Abbasi"
+      - "M. Ghayour"
+      - "M. Danesh"
+      - "P. Amiri"
+      - "M. H. Yoosefian Nooshabadi"
+    venue: "6th RSI International Conference on Robotics and Mechatronics (IcRoM)"
+    year: 2018
+    details: "pp. 273–279"
+    status: "Published"
+    abstract: >-
+      This paper focuses on formation flight control of a multi-quadrotor system. Path tracking of
+      this system is another subject which is in the spot light. When a fault occurs for leader of the
+      group in the leader-follower structure, mission will be failed. In order to avoid this fault, in
+      this paper virtual structure is used instead. The group uses two control loops for flight
+      controlling. Inner loop which is used to control attitudes of agents, combines feedback
+      linearization controller with PD controller. Outer loop which is designed for position control,
+      uses a combination of consensus protocol with PID controller. There is measurement noise in the
+      system, thereby exact values of the states are not available. In order to compensate these
+      negative factor, Kalman filter is used, thus states values are estimated. Finally, effectiveness
+      of the presented protocol is examined through stability analysis and numerical simulation.
+    bibtex: |
+      @inproceedings{abbasi2018formation,
+        title={Formation flight control and path tracking of a multi-quadrotor system in the presence of measurement noise and disturbances},
+        author={Abbasi, Ehsan and Ghayour, Mostafa and Danesh, Mohammad and Amiri, Peyman and Yoosefian, Mohammad Hussein},
+        booktitle={2018 6th RSI International Conference on Robotics and Mechatronics (IcRoM)},
+        pages={273--279},
+        year={2018},
+        organization={IEEE}
+      }
+    links:
+      - label: "Link"
+        url: "https://ieeexplore.ieee.org/abstract/document/8657620"
+      - label: "PDF"
+        url: "/files/papers/abbasi2018formation.pdf"
+
+  - id: optimal-quadrotor-tracking
+    category: conference
+    title: "Optimal Path Tracking of a Quadrotor in the Presence of Obstacle Using the League Championship Algorithm"
+    authors:
+      - "E. Abbasi"
+      - "M. Ghayour"
+      - "M. Danesh"
+      - "M. H. Yoosefian Nooshabadi"
+    venue: "6th RSI International Conference on Robotics and Mechatronics (IcRoM)"
+    year: 2018
+    details: "pp. 236–242"
+    status: "Published"
+    abstract: >-
+      Nowadays, cost reduction and optimization has attracted attention of researchers and scientists
+      in many fields. Optimal path tracking for vehicles, which reduces fuel consumption, as well as
+      the distance traversed by the vehicle, has mostly caught attention. Besides, Unmanned Aerial
+      Vehicles are in the spotlight because of their great performance in doing a vast majority of
+      jobs, especially those which are perilous for human. One of the most prevailing issues in this
+      field is optimal path tracking. Although different algorithms are presented and despite their
+      acceptable performance, none of them has focused on reducing energy and distance. In this paper
+      a new optimization algorithm is utilized for the latter optimizations. This algorithm is called
+      the Championship Algorithm by its Iranian developer. Combining it with the path tracking problem
+      of the unmanned aerial vehicles, it is shown that its performance is much better than one of the
+      most important existing algorithms (GA). Optimal trajectory tracking problem is also solved to
+      reduce fuel and energy consumption.
+    bibtex: |
+      @inproceedings{abbasi2018optimal,
+        title={Optimal path tracking of a quadrotor in the presence of obstacle using the League Championship Algorithm},
+        author={Abbasi, Ehsan and Ghayour, Mostafa and Danesh, Mohammad and Yoosefian, Mohammad Hussein},
+        booktitle={2018 6th RSI international conference on robotics and mechatronics (IcRoM)},
+        pages={236--242},
+        year={2018},
+        organization={IEEE}
+      }
+    links:
+      - label: "Link"
+        url: "https://ieeexplore.ieee.org/abstract/document/8657554"
+      - label: "PDF"
+        url: "/files/papers/abbasi2018optimal.pdf"

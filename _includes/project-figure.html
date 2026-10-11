@@ -1,0 +1,6 @@
+{% comment %}Image with caption. Usage: include project-figure.html src="figure1.png" alt="What the image shows" caption="Optional caption"
+src is the file name of an image inside the same project folder.{% endcomment %}
+<figure class="project-figure">
+  <img src="{{ include.src }}" alt="{{ include.alt | default: include.caption | escape }}" loading="lazy">
+  {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>

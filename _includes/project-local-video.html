@@ -1,0 +1,6 @@
+{% comment %}Video file stored in the project folder (keep it small, < ~10 MB; otherwise use YouTube).
+Usage: include project-local-video.html src="video.mp4" poster="cover.jpg" caption="Optional caption"{% endcomment %}
+<figure class="project-figure">
+  <video class="video-file" controls preload="metadata" playsinline{% if include.poster %} poster="{{ include.poster }}"{% endif %}><source src="{{ include.src }}" type="video/mp4">Your browser cannot play this video. <a href="{{ include.src }}">Download it</a>.</video>
+  {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>
