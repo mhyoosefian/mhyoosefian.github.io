@@ -6,7 +6,7 @@
 // myWebsite/animation-demo/three-d/.
 import * as T from 'three';
 import {RoomEnvironment} from './vendor/RoomEnvironment.js';
-import {createRobot} from './robot.js?v=9';
+import {createRobot} from './robot.js?v=12';
 
 const footer = document.querySelector('.site-footer');
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');

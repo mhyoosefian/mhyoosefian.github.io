@@ -142,8 +142,6 @@ For routine updates, include `_data/publications.yml` and any new PDFs in `files
 - `assets/css/academic.css`: visual styling, in the publication rules near the end.
 - `_layouts/academic.html`: shared website layout.
 
-The old AcademicPages `_publications/` sample collection does not feed this new page. Adding entries there will not add them to the new publication list.
-
 ## Source reconciliation for this first version
 
 The list combines `mhyoosefian-resume.pdf` and `MHYoosefian_CV.docx`. The first version had nine papers; the two Persian-language conference papers (from the Word CV only) were later removed at the owner's request, leaving seven. Author order and available links were retained. The PDF generally supersedes older Word entries.

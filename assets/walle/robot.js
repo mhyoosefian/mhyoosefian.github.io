@@ -113,6 +113,7 @@ export function createRobot(){
  const TRACK_HALF_WIDTH=TRACK_X;
  // Deep squat: the body bottom drops 0.77 (0.05 in the neck stage), ending just above the divider line.
  const SQUAT_DROP=.72,NECK_PART=.31;
+ const WRIST_FLICK=.12;   // extra wrist bend (radians, about 7°) at the ends of each wave
  function animate({x,face,duck,wave,t,closeup,angle=0,vib={},dir=1,look=0}){
   const V={body:0,neck:0,arm:0,bob:0,rattle:0,...vib};
   // Facing the viewer is a pivot turn in place: yaw goes from +90° (travelling right) to 0°.
@@ -136,8 +137,14 @@ export function createRobot(){
    const sw=(V.armL??V.arm??0)*(1-w),hd=(V.handL??0)*(1-w);
    // In the deep squat the folded arms lift a little so the elbows clear the treads.
    shoulder.rotation.set(L(CLASP.sx+k*CLASP.dsx-.3*q,-2.55,w)+.5*sw,side*L(CLASP.sy,0,w),side*L(CLASP.sz,.40+.39*osc,w));
+   // Wave: the wrist stays in line with the forearm through the middle of each side-to-side swing
+   // and, as the arm reaches either end, flicks a few degrees further (WRIST_FLICK) in the same
+   // direction. The flick is about the wrist's z axis, which faces the viewer, so the palm turns
+   // in the plane of the screen and never tips toward or away from the viewer. (Measured on the
+   // posed model: -osc turns the hand further in the direction the forearm is swinging.)
+   const flick=-Math.sign(osc)*osc**4;
    elbow.rotation.x=L(CLASP.ex+k*CLASP.dex,-.38,w)+.5*hd+w*.33*Math.sin(t*6.2+1.4);
-   wrist.rotation.set(L(CLASP.wx,0,w)+.6*hd,side*L(CLASP.wy,.06,w),side*L(CLASP.wz,0,w)+w*.41*Math.sin(t*6.2+.6));
+   wrist.rotation.set(L(CLASP.wx,0,w)+.6*hd,side*L(CLASP.wy,.06,w),side*L(CLASP.wz,0,w)+w*WRIST_FLICK*flick);
    mount.position.z=ARM_Z+L(CLASP.slide+k*CLASP.dslide,0,w);wrist.position.y=-.50-L(CLASP.ext,0,w);
    for(const f of fingers){const curl=L(.38,.12,w)+.9*hd;f.prox.rotation.x=f.dir*curl;f.dist.rotation.x=f.dir*curl*1.3;}}
   // Tank steering: while turning in place the two treads run in opposite directions by the arc
