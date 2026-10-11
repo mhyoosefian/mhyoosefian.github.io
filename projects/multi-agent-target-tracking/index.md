@@ -5,6 +5,7 @@ start: 2024-12
 categories:
   - multi-agent
   - control
+  - convex-optimization
 summary: "A team of agents with range-only sensors localizes and tracks a moving target in an optimal formation, rejecting external disturbances with an EKF and avoiding obstacles with a control barrier function safety filter."
 thumbnail: cover.png
 math: true

@@ -5,6 +5,7 @@ start: 2023-04
 categories:
   - control
   - multi-agent
+  - convex-optimization
 summary: "Planning the motion of a follower robot that must stay close to a moving leader without colliding with it, while visiting a goal region in time, by encoding the specifications in signal temporal logic and solving a mixed-integer program."
 thumbnail: poster.jpg
 math: true

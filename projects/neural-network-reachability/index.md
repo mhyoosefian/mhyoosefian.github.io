@@ -4,6 +4,7 @@ title: "Reachability of Neural Networks via Semidefinite Programming"
 start: 2023-12
 categories:
   - neural-networks
+  - convex-optimization
 summary: "Bounding every state a neural-network-controlled system can reach, and confidence regions for the output of a network with a random input, by abstracting ReLU activations with quadratic constraints and solving semidefinite programs."
 thumbnail: di-octagon.png
 math: true

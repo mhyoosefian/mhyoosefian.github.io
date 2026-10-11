@@ -12,3 +12,5 @@
   label: "Dynamics"
 - id: control
   label: "Control"
+- id: convex-optimization
+  label: "Convex optimization"
