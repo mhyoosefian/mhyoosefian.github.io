@@ -1,6 +1,7 @@
 ---
 layout: academic
 title: "Projects"
+description: "Projects in state estimation, computer vision, control, neural networks, dynamics and convex optimization, with code, figures and videos: EKF, UKF and invariant EKF, visual-inertial odometry, reachability of neural networks and more."
 permalink: /projects/
 ---
 

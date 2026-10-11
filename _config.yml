@@ -6,6 +6,8 @@ locale      : "en-US"
 title       : "Mohammad Hussein Yoosefian Nooshabadi"
 name        : &name "Mohammad Hussein Yoosefian Nooshabadi"
 description : "Ph.D. Candidate"   # shown under the name in the sidebar
+seo_description: "Mohammad Hussein Yoosefian Nooshabadi, Ph.D. candidate at Northeastern University: state estimation, Kalman filtering, convex optimization and robotics."   # fallback description for search engines
+# google_site_verification: ""   # paste the code from Google Search Console here
 url         : https://mhyoosefian.github.io
 baseurl     : ""
 repository  : "mhyoosefian/mhyoosefian.github.io"

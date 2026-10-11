@@ -1,6 +1,7 @@
 ---
 layout: academic
 title: "Publications"
+description: "Journal and conference papers on Kalman filtering, non-Gaussian state estimation, sensor placement, visual-inertial odometry and multibody dynamics, with PDFs and BibTeX."
 permalink: /publications/
 ---
 

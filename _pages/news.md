@@ -1,6 +1,7 @@
 ---
 layout: academic
 title: "News"
+description: "News and updates: papers, conference presentations and milestones."
 permalink: /news/
 ---
 

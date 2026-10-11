@@ -1,6 +1,7 @@
 ---
 layout: academic
 title: "Blog"
+description: "Blog posts and tutorials, including a short note on matrix Lie groups for robotics and state estimation."
 permalink: /blog/
 ---
 

@@ -2,6 +2,7 @@
 layout: academic
 permalink: /
 title: "About me"
+description: "Mohammad Hussein Yoosefian Nooshabadi, Ph.D. candidate in Mechanical Engineering at Northeastern University, working on state estimation under non-Gaussian noise, Kalman filtering, convex optimization and robotics."
 hide_heading: true
 walle: true          # WALL·E footer animation (assets/walle/)
 redirect_from:

@@ -1,6 +1,7 @@
 ---
 layout: academic
 title: "Curriculum vitae"
+description: "Curriculum vitae of Mohammad Hussein Yoosefian Nooshabadi: education, work experience, teaching, honors, skills and reviewing service."
 permalink: /cv/
 redirect_from:
   - /resume

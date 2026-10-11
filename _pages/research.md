@@ -1,6 +1,7 @@
 ---
 layout: academic
 title: "Research"
+description: "Research on certifiably stable state estimation under non-Gaussian noise, vision-based navigation (visual-inertial odometry) and analytical dynamics of multibody systems."
 permalink: /research/
 ---
 
