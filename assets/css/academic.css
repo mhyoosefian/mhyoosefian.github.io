@@ -91,6 +91,10 @@ p { margin: 0 0 20px; }
 .publication-list { padding-left: 25px; margin: 0; }
 .publication-list-plain { list-style: none; padding-left: 0; }
 .publication-list > li { padding: 7px 0 24px 8px; margin-bottom: 18px; border-bottom: 1px solid var(--line); }
+/* A paper reached through a link (/publications/#id) glows briefly in the accent colour, then fades. */
+.publication-list > li { scroll-margin-top: 24px; border-radius: 6px; }
+.publication-list > li.flash { animation: target-glow 2.6s ease-out 1; }
+@keyframes target-glow { 0%, 30% { background: var(--accent-ring); box-shadow: 0 0 0 10px var(--accent-ring); } 100% { background: transparent; box-shadow: 0 0 0 10px transparent; } }
 .publication-list-plain > li { padding-left: 0; }
 .publication-list > li:last-child { border-bottom: 0; padding-bottom: 0; margin-bottom: 0; }
 .publication-list > li::marker { font-size: 14px; color: var(--accent); }

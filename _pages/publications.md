@@ -67,6 +67,18 @@ permalink: /publications/
       panel.hidden = !open;
     });
   });
+
+  // A link to one paper (/publications/#paper-id): once the page has settled, bring the paper to
+  // the middle of the screen and let it glow briefly (the .flash animation in academic.css).
+  function highlight() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    var item = id && id !== 'by-year' ? document.getElementById(id) : null;
+    if (!item || !item.closest('.publication-list')) return;
+    item.scrollIntoView({block: 'center'});
+    item.classList.remove('flash'); void item.offsetWidth; item.classList.add('flash');
+  }
+  if (document.readyState === 'complete') highlight(); else window.addEventListener('load', highlight);
+  window.addEventListener('hashchange', highlight);
 })();
 </script>
 {% include copy-button-script.html %}
