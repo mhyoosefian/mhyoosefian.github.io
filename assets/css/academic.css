@@ -32,7 +32,7 @@ nav a:hover, nav a[aria-current="page"] { color: var(--accent); border-bottom-co
 .profile { align-self: start; }
 .site-layout.is-home { padding-top: 44px; padding-bottom: 58px; }  /* room for WALL·E above the footer line */
 .is-home .intro { margin-bottom: 16px; }
-.is-home .bio p { margin-bottom: 12.6px; }  /* 30% less space between the home-page paragraphs */
+.is-home .bio p { margin-bottom: 12.6px; line-height: 1.6; }  /* tighter lines and paragraphs on the home page */
 .is-home .section-heading { margin-top: 28px; }
 .portrait { display: block; width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin-bottom: 26px; }
 .monogram { display: grid; place-items: center; background: var(--soft); color: var(--accent); font: 46px Georgia, serif; border: 1px solid var(--accent-border); letter-spacing: -.04em; }
@@ -326,6 +326,7 @@ main .flowchart-caption { text-align: center; }
 
 /* Research page */
 .research-intro { max-width: 760px; margin-bottom: 8px; }
+.research-intro p, .research-intro li, .research-text p { line-height: 1.6; }
 .research-intro p { margin: 0 0 13px; }
 .research-intro ol { padding-left: 22px; margin: 0 0 13px; }
 .research-tag { white-space: nowrap; }
