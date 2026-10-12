@@ -322,22 +322,19 @@ main .flowchart-caption { text-align: center; }
 
 /* Research page */
 .research-intro { max-width: 760px; margin-bottom: 8px; }
-.research-intro ol { padding-left: 22px; margin: 0 0 16px; }
+.research-intro p { margin: 0 0 13px; }
+.research-intro ol { padding-left: 22px; margin: 0 0 13px; }
+.research-tag { white-space: nowrap; }
 .research-intro li { margin: 6px 0; }
-.expandable-more > :last-child { margin-bottom: 0; }
-.more-toggle { font: inherit; font-size: .92em; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; white-space: nowrap; }
-.more-toggle:hover { text-decoration: underline; text-underline-offset: 2px; }
-.more-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
 .research-list { list-style: none; padding: 0; margin: 26px 0 0; }
 .research-item { display: flex; gap: 26px; align-items: flex-start; padding: 26px 0; border-top: 1px solid var(--line); scroll-margin-top: 24px; }
 .research-figure { flex: 0 0 200px; padding: 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); }
 .research-figure svg { display: block; width: 100%; height: auto; }
 .research-text { flex: 1; min-width: 0; }
 .research-text h2 { margin: 0 0 10px; font-size: 19px; line-height: 1.35; }
-.research-text p { margin: 0 0 14px; }
-.research-text a:not(.more-toggle) { color: var(--accent); text-decoration: none; }
+.research-text p { margin: 0 0 13px; }
+.research-text a { color: var(--accent); text-decoration: none; }
 .research-text a:hover { text-decoration: underline; text-underline-offset: 2px; }
-.research-intro .expandable-more a { color: var(--accent); }
 .research-related { font-size: 14px; color: var(--muted); text-align: left; }
 .research-related span { font-weight: 600; color: var(--ink); }
 @media (max-width: 640px) { .research-item { flex-direction: column; gap: 14px; } .research-figure { flex: none; width: 100%; max-width: 280px; } }
