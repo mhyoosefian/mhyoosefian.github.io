@@ -32,6 +32,7 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
+  <img class="header-besm" src="{{ '/images/besm.png' | relative_url }}" alt="" aria-hidden="true" width="1388" height="476">
   <div class="header-inner">
     <a class="site-name" href="{{ '/' | relative_url }}">{{ site.name | escape }}<span class="site-label">Academic website</span></a>
     <div class="header-tools">
@@ -49,6 +50,7 @@
 </header>
 <div class="site-layout{% if page.hide_heading %} is-home{% endif %}">
   <aside class="profile" aria-label="Profile">
+    <img class="profile-besm" src="{{ '/images/besm.png' | relative_url }}" alt="بسم الله الرحمن الرحیم" lang="fa" width="1388" height="476">
     {% if site.author.portrait %}<div class="portrait portrait-photo"><img src="{{ site.author.portrait | relative_url }}" alt="{{ site.name | escape }}" width="960" height="1280"></div>{% else %}<div class="portrait monogram" role="img" aria-label="Initials: M H Y">MHY</div>{% endif %}
     <h2>{{ site.name }}</h2>
     <p class="profile-role">{{ site.description }}</p>

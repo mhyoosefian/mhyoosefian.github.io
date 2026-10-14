@@ -34,6 +34,25 @@ nav a:hover, nav a[aria-current="page"] { color: var(--accent); border-bottom-co
 .is-home .intro { margin-bottom: 16px; }
 .is-home .section-heading { margin-top: 28px; }
 .portrait { display: block; width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin-bottom: 26px; }
+/* بسم الله tilted 45° in an empty spot: in the left page margin on wide windows, otherwise in the
+   empty top-left corner around the round portrait. It is positioned absolutely, so the layout is
+   exactly the same as without it. Hidden on phones, where there is no room. */
+.profile { position: relative; }
+.profile-besm { position: absolute; left: -19px; top: 2px; width: 64px; height: auto; transform: rotate(-45deg); opacity: .85; pointer-events: none; }
+:root[data-theme="dark"] .profile-besm { filter: invert(1); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .profile-besm { filter: invert(1); } }
+@media (max-width: 640px) { .profile-besm { display: none; } }
+/* Wide windows: in the empty margin left of the header, centred on the name block. The sidebar copy
+   (in the portrait corner) is used only where that margin is too narrow. */
+.site-header { position: relative; }
+.header-besm { display: none; }
+@media (min-width: 1360px) {
+  .profile-besm { display: none; }
+  .header-besm { display: block; position: absolute; width: 90px; height: auto; opacity: .85; pointer-events: none;
+    left: calc((100vw - 1160px) / 4 + 16px); top: 50%; transform: translate(-50%, -50%) rotate(-45deg); }
+  :root[data-theme="dark"] .header-besm { filter: invert(1); }
+}
+@media (min-width: 1360px) and (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .header-besm { filter: invert(1); } }
 .monogram { display: grid; place-items: center; background: var(--soft); color: var(--accent); font: 46px Georgia, serif; border: 1px solid var(--accent-border); letter-spacing: -.04em; }
 .profile h2 { font-size: 22px; line-height: 1.4; font-weight: 600; margin: 0 0 10px; }
 .profile-role { color: var(--muted); margin: 0 0 24px; font-size: 15px; }
